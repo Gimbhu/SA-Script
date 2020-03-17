@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-
 ##########################################
 #Auther:Kammo
 #Date:2020/01/12
@@ -9,8 +8,6 @@
 #每周日定时过滤最近一周每天的baidu爬虫日志
 #发送到运营同学的邮箱
 ##########################################
-
-
 
 import datetime
 import time
@@ -119,7 +116,6 @@ for d in days:
     for n in DOMAIN:
         LogQuery(n,d)
 
-
 time.sleep(3)
 
 #打包压缩日志
@@ -132,7 +128,6 @@ for dirpath, dirnames, filenames in os.walk(startdir):
     for filename in filenames:
         z.write(os.path.join(dirpath, filename), fpath+filename)
 z.close()
-
 
 #发送邮件
 def send_mail(mailto_list,sub):
@@ -159,7 +154,6 @@ def send_mail(mailto_list,sub):
         return True
     except Exception:
         return False
-
 
 #发送邮箱
 mailto_list=[""]
